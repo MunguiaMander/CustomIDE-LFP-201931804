@@ -8,12 +8,11 @@ import javax.swing.JTextArea;
  *
  * @author Marco Munguia <@markomannder>
  */
-public class Analyzer {
+public class LexicalAnalyzer {
 
     private String textEntered;
     private ArrayList<String> tokenArray = new ArrayList<>();
     private ArrayList<String> errorArray = new ArrayList<>();
-    private ArrayList<String> transitionsArray = new ArrayList<>();
     private int stateMatrix[][] = new int[13][25];
     private int actualState = 0;
     private int index = 0;
@@ -93,7 +92,7 @@ public class Analyzer {
 
     }
 
-    public Analyzer(JTextArea textArea, JTextArea tokenLogArea, JTextArea errorLogArea) {
+    public LexicalAnalyzer(JTextArea textArea, JTextArea tokenLogArea, JTextArea errorLogArea) {
         textEntered = textArea.getText();
         while (index < textEntered.length()) {
             getToken(tokenLogArea, errorLogArea);
@@ -120,7 +119,6 @@ public class Analyzer {
                 temporalState = getNextState(actualState, getStateInt(tmp, stateCheck));
                 stateCheck = temporalState;
                 tokenString += tmp;
-                transitionLog.fillTransitionLog(tokenString, transitionsArray, actualState, temporalState, stringRow);
                 actualState = temporalState;
             }
             index++;

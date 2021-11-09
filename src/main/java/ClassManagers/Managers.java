@@ -5,7 +5,7 @@
  */
 package ClassManagers;
 
-import Lexical.Analyzer;
+import Lexical.LexicalAnalyzer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -21,7 +21,7 @@ public class Managers {
         analyzeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Analyzer initialize = new Analyzer(textArea, tokenLogArea, errorLogArea);
+                LexicalAnalyzer initialize = new LexicalAnalyzer(textArea, tokenLogArea, errorLogArea);
 
             }
 
