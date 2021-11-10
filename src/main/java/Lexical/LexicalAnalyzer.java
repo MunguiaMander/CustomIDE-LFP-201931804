@@ -179,7 +179,7 @@ public class LexicalAnalyzer {
             errorLogs.fillErrorLog(tokenString, errorArray, stringRow, stringCoulmn);
             actualState = 0;
             stateCheck = 0;
-        } else {
+        } else if (actualState == -1 || actualState != 0) {
             tokenLogs.fillTokenLog(tokenString, tokenArray, stringRow, stringCoulmn, actualState);
         }
 

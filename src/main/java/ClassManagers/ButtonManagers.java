@@ -9,7 +9,6 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
-import java.awt.datatransfer.Transferable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -26,8 +25,30 @@ public class ButtonManagers {
 
     private StringSelection tmp;
 
-    public void initializeTextAreaButtons(JTextArea codeArea, JButton undoButton, JButton redoButton, JButton copyButton, JButton pasteButton) {
+    public void initializeTextAreaButtons(JTextArea codeArea, JButton undoButton, JButton redoButton, JButton copyButton, JButton pasteButton, JButton openFileButton, JButton saveFileButton, JButton saveAsFileButton, JButton newFileButton, JButton compileButton, JButton aboutUsButton) {
         UndoManager editManager = new UndoManager();
+
+        undoButton.setOpaque(false);
+        undoButton.setContentAreaFilled(false);
+        redoButton.setOpaque(false);
+        redoButton.setContentAreaFilled(false);
+        copyButton.setOpaque(false);
+        copyButton.setContentAreaFilled(false);
+        pasteButton.setOpaque(false);
+        pasteButton.setContentAreaFilled(false);
+        openFileButton.setOpaque(false);
+        openFileButton.setContentAreaFilled(false);
+        saveFileButton.setOpaque(false);
+        saveFileButton.setContentAreaFilled(false);
+        saveAsFileButton.setOpaque(false);
+        saveAsFileButton.setContentAreaFilled(false);
+        newFileButton.setOpaque(false);
+        newFileButton.setContentAreaFilled(false);
+        compileButton.setOpaque(false);
+        compileButton.setContentAreaFilled(false);
+        aboutUsButton.setOpaque(false);
+        aboutUsButton.setContentAreaFilled(false);
+
         codeArea.getDocument().addUndoableEditListener(new UndoableEditListener() {
             @Override
             public void undoableEditHappened(UndoableEditEvent e) {

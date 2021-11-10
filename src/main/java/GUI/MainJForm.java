@@ -27,7 +27,11 @@ public class MainJForm extends javax.swing.JFrame {
         analyzerManager.initializeAnalyzer(compileButton, textWriterArea, tokenLogArea, errorLogArea);
         dataManager.dataManager(openFileButton, textWriterArea);
         dataManager.Export(exportError, errorLogArea);
-        buttonManagers.initializeTextAreaButtons(textWriterArea, undoButton, redoButton, copyTextButton, pasteTextButton);
+        dataManager.Export(exportTokens, tokenLogArea);
+        buttonManagers.initializeTextAreaButtons(textWriterArea, undoButton, redoButton, copyTextButton, pasteTextButton, openFileButton, saveFileButton, saveFileAsButton, newFileButton, compileButton, aboutButton);
+        dataManager.Export(saveFileAsButton, textWriterArea);
+        analyzerManager.clearArea(cleanButton, textWriterArea, tokenLogArea, errorLogArea);
+        analyzerManager.clearArea(newFileButton, textWriterArea, tokenLogArea, errorLogArea);
     }
 
     /**
@@ -128,6 +132,7 @@ public class MainJForm extends javax.swing.JFrame {
         });
         jPanel1.add(exportError, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 820, -1, -1));
 
+        errorLabel.setForeground(new java.awt.Color(255, 255, 255));
         errorLabel.setText("Token Log");
         jPanel1.add(errorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 50, 176, 63));
 
@@ -230,6 +235,7 @@ public class MainJForm extends javax.swing.JFrame {
         aboutButton.setInheritsPopupMenu(true);
         jPanel1.add(aboutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 10, 90, 77));
 
+        errorLabel1.setForeground(new java.awt.Color(255, 255, 255));
         errorLabel1.setText("ErrorLog");
         jPanel1.add(errorLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 730, 176, 63));
 

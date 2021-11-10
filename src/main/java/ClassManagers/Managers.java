@@ -28,4 +28,17 @@ public class Managers {
         });
     }
 
+    public void clearArea(JButton clearButton, JTextArea textArea, JTextArea tokenLogArea, JTextArea errorLogArea) {
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LexicalAnalyzer initialize = new LexicalAnalyzer(textArea, tokenLogArea, errorLogArea);
+                textArea.setText(null);
+                tokenLogArea.setText(null);
+                errorLogArea.setText(null);
+            }
+
+        });
+    }
+
 }
