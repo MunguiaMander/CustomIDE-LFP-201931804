@@ -11,7 +11,9 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.event.UndoableEditListener;
@@ -109,6 +111,20 @@ public class ButtonManagers {
 
                     }
                 }
+            }
+        });
+        aboutUsButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                try {
+                    JOptionPane.showMessageDialog(null, "Developed by Marco Munguia \n 201931804 \n aka: Mander", "About Me ", 0, (new ImageIcon(getClass().getResource("/IDEImages/manderPic.png"))));
+                    //"Developed by Marco Munguia \n 201931804 \n AKA: Mander"
+                } catch (Exception a) {
+
+                }
+
             }
         });
 
