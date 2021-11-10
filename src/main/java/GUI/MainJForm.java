@@ -15,6 +15,7 @@ public class MainJForm extends javax.swing.JFrame {
 
     Managers analyzerManager = new Managers();
     DataManager dataManager = new DataManager();
+    ButtonManagers buttonManagers = new ButtonManagers();
 
     /**
      * Creates new form MainJForm
@@ -25,6 +26,7 @@ public class MainJForm extends javax.swing.JFrame {
         analyzerManager.initializeAnalyzer(compileButton, textWriterArea, tokenLogArea, errorLogArea);
         dataManager.dataManager(openFileButton, textWriterArea);
         dataManager.Export(exportError, errorLogArea);
+        buttonManagers.initializeTextAreaButtons(textWriterArea, undoButton, redoButton, copyTextButton, pasteTextButton);
     }
 
     /**
@@ -140,19 +142,19 @@ public class MainJForm extends javax.swing.JFrame {
         jPanel1.add(copyTextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, 77));
 
         pasteTextButton.setText("Paste Text");
-        jPanel1.add(pasteTextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, -1, 77));
+        jPanel1.add(pasteTextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, 77));
 
         redoButton.setText("Redo");
-        jPanel1.add(redoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, 74, 77));
+        jPanel1.add(redoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 74, 77));
 
         undoButton.setText("Undo");
-        jPanel1.add(undoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 76, 77));
+        jPanel1.add(undoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 76, 77));
 
         compileButton.setText("Compile");
-        jPanel1.add(compileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, -1, 77));
+        jPanel1.add(compileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, -1, 77));
 
         aboutButton.setText("About Us");
-        jPanel1.add(aboutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 10, 120, 77));
+        jPanel1.add(aboutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, 120, 77));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
