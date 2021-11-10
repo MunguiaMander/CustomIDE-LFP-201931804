@@ -23,6 +23,7 @@ public class MainJForm extends javax.swing.JFrame {
     public MainJForm() {
         initComponents();
         this.setTitle("ManderIDE - 1.0");
+        setLocationRelativeTo(null);
         analyzerManager.initializeAnalyzer(compileButton, textWriterArea, tokenLogArea, errorLogArea);
         dataManager.dataManager(openFileButton, textWriterArea);
         dataManager.Export(exportError, errorLogArea);
@@ -63,24 +64,35 @@ public class MainJForm extends javax.swing.JFrame {
         undoButton = new javax.swing.JButton();
         compileButton = new javax.swing.JButton();
         aboutButton = new javax.swing.JButton();
+        errorLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
 
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setForeground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tokenLogArea.setBackground(new java.awt.Color(102, 102, 102));
         tokenLogArea.setColumns(20);
+        tokenLogArea.setForeground(new java.awt.Color(255, 255, 255));
         tokenLogArea.setRows(5);
         jScrollPane1.setViewportView(tokenLogArea);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 120, 324, 680));
 
+        textWriterArea.setBackground(new java.awt.Color(102, 102, 102));
         textWriterArea.setColumns(20);
+        textWriterArea.setForeground(new java.awt.Color(255, 255, 255));
         textWriterArea.setRows(5);
         jScrollPane2.setViewportView(textWriterArea);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 113, 951, 561));
 
+        cleanButton.setForeground(new java.awt.Color(255, 255, 255));
         cleanButton.setText("Limpiar");
+        cleanButton.setBorder(null);
         cleanButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cleanButtonActionPerformed(evt);
@@ -88,13 +100,17 @@ public class MainJForm extends javax.swing.JFrame {
         });
         jPanel1.add(cleanButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 870, 103, -1));
 
+        errorLogArea.setBackground(new java.awt.Color(102, 102, 102));
         errorLogArea.setColumns(20);
+        errorLogArea.setForeground(new java.awt.Color(255, 255, 255));
         errorLogArea.setRows(5);
         jScrollPane5.setViewportView(errorLogArea);
 
         jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 790, 1010, 190));
 
+        exportTokens.setForeground(new java.awt.Color(255, 255, 255));
         exportTokens.setText("Exportar Tokens");
+        exportTokens.setBorder(null);
         exportTokens.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exportTokensActionPerformed(evt);
@@ -102,7 +118,9 @@ public class MainJForm extends javax.swing.JFrame {
         });
         jPanel1.add(exportTokens, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 820, -1, -1));
 
+        exportError.setForeground(new java.awt.Color(255, 255, 255));
         exportError.setText("Exportar Errores");
+        exportError.setBorder(null);
         exportError.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exportErrorActionPerformed(evt);
@@ -110,61 +128,120 @@ public class MainJForm extends javax.swing.JFrame {
         });
         jPanel1.add(exportError, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 820, -1, -1));
 
-        errorLabel.setText("ErrorLog");
-        jPanel1.add(errorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 730, 176, 63));
+        errorLabel.setText("Token Log");
+        jPanel1.add(errorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 50, 176, 63));
 
+        textWriterArea1.setBackground(new java.awt.Color(102, 102, 102));
         textWriterArea1.setColumns(20);
+        textWriterArea1.setForeground(new java.awt.Color(255, 255, 255));
         textWriterArea1.setRows(5);
         jScrollPane6.setViewportView(textWriterArea1);
 
         jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 113, 53, 555));
 
+        textWriterArea2.setBackground(new java.awt.Color(102, 102, 102));
         textWriterArea2.setColumns(20);
+        textWriterArea2.setForeground(new java.awt.Color(255, 255, 255));
         textWriterArea2.setRows(5);
         jScrollPane7.setViewportView(textWriterArea2);
 
         jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 680, 951, 52));
 
+        openFileButton.setBackground(new java.awt.Color(0,0,0,0));
+        openFileButton.setForeground(new java.awt.Color(255, 255, 255));
+        openFileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/openFileImage.png"))); // NOI18N
         openFileButton.setText("Open File");
-        jPanel1.add(openFileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 137, 77));
+        openFileButton.setBorder(null);
+        openFileButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(openFileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 100, 77));
 
+        saveFileButton.setBackground(new java.awt.Color(0,0,0,0));
+        saveFileButton.setForeground(new java.awt.Color(255, 255, 255));
+        saveFileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/saveFileImage.png"))); // NOI18N
         saveFileButton.setText("Save File");
-        jPanel1.add(saveFileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 86, 77));
+        saveFileButton.setBorder(null);
+        saveFileButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(saveFileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 100, 77));
 
+        saveFileAsButton.setBackground(new java.awt.Color(0,0,0,0));
+        saveFileAsButton.setForeground(new java.awt.Color(255, 255, 255));
+        saveFileAsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/saveAsFileImage.png"))); // NOI18N
         saveFileAsButton.setText("Save File As");
-        jPanel1.add(saveFileAsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, 77));
+        saveFileAsButton.setBorder(null);
+        saveFileAsButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(saveFileAsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 100, 77));
 
+        newFileButton.setBackground(new java.awt.Color(0,0,0,0));
+        newFileButton.setForeground(new java.awt.Color(255, 255, 255));
+        newFileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/newFileImage.png"))); // NOI18N
         newFileButton.setText("New File");
-        jPanel1.add(newFileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, 77));
+        newFileButton.setBorder(null);
+        newFileButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(newFileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 90, 77));
 
+        copyTextButton.setBackground(new java.awt.Color(0,0,0,0));
+        copyTextButton.setForeground(new java.awt.Color(255, 255, 255));
+        copyTextButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/copyTextImage.png"))); // NOI18N
         copyTextButton.setText("Copy Text");
         copyTextButton.setToolTipText("");
-        jPanel1.add(copyTextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, 77));
+        copyTextButton.setAutoscrolls(true);
+        copyTextButton.setBorder(null);
+        copyTextButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(copyTextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 90, 77));
 
+        pasteTextButton.setBackground(new java.awt.Color(0,0,0,0));
+        pasteTextButton.setForeground(new java.awt.Color(255, 255, 255));
+        pasteTextButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/pasteTextImage.png"))); // NOI18N
         pasteTextButton.setText("Paste Text");
-        jPanel1.add(pasteTextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, 77));
+        pasteTextButton.setBorder(null);
+        pasteTextButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(pasteTextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 90, 77));
 
+        redoButton.setBackground(new java.awt.Color(0,0,0,0));
+        redoButton.setForeground(new java.awt.Color(255, 255, 255));
+        redoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/redoImage.png"))); // NOI18N
         redoButton.setText("Redo");
-        jPanel1.add(redoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 74, 77));
+        redoButton.setBorder(null);
+        redoButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(redoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 100, 77));
 
+        undoButton.setBackground(new java.awt.Color(0,0,0,0));
+        undoButton.setForeground(new java.awt.Color(255, 255, 255));
+        undoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/undoImage.png"))); // NOI18N
         undoButton.setText("Undo");
-        jPanel1.add(undoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 76, 77));
+        undoButton.setBorder(null);
+        undoButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(undoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 100, 77));
 
+        compileButton.setBackground(new java.awt.Color(0,0,0,0));
+        compileButton.setForeground(new java.awt.Color(255, 255, 255));
+        compileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/compileImage.png"))); // NOI18N
         compileButton.setText("Compile");
-        jPanel1.add(compileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, -1, 77));
+        compileButton.setBorder(null);
+        compileButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(compileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 110, 77));
 
+        aboutButton.setBackground(new java.awt.Color(0,0,0,0));
+        aboutButton.setForeground(new java.awt.Color(255, 255, 255));
+        aboutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/aboutUsImage.png"))); // NOI18N
         aboutButton.setText("About Us");
-        jPanel1.add(aboutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, 120, 77));
+        aboutButton.setBorder(null);
+        aboutButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        aboutButton.setInheritsPopupMenu(true);
+        jPanel1.add(aboutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 10, 90, 77));
+
+        errorLabel1.setText("ErrorLog");
+        jPanel1.add(errorLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 730, 176, 63));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1423, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1423, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -189,6 +266,7 @@ public class MainJForm extends javax.swing.JFrame {
     private javax.swing.JButton compileButton;
     private javax.swing.JButton copyTextButton;
     private javax.swing.JLabel errorLabel;
+    private javax.swing.JLabel errorLabel1;
     private javax.swing.JTextArea errorLogArea;
     private javax.swing.JButton exportError;
     private javax.swing.JButton exportTokens;
