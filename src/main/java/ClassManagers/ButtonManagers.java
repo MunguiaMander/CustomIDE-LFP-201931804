@@ -25,7 +25,7 @@ public class ButtonManagers {
 
     private StringSelection tmp;
 
-    public void initializeTextAreaButtons(JTextArea codeArea, JButton undoButton, JButton redoButton, JButton copyButton, JButton pasteButton, JButton openFileButton, JButton saveFileButton, JButton saveAsFileButton, JButton newFileButton, JButton compileButton, JButton aboutUsButton) {
+    public void initializeTextAreaButtons(JTextArea codeArea, JButton undoButton, JButton redoButton, JButton copyButton, JButton pasteButton, JButton openFileButton, JButton saveFileButton, JButton saveAsFileButton, JButton newFileButton, JButton compileButton, JButton aboutUsButton, JButton exportError, JButton exportTokens, JButton cleanButton) {
         UndoManager editManager = new UndoManager();
 
         undoButton.setOpaque(false);
@@ -48,6 +48,12 @@ public class ButtonManagers {
         compileButton.setContentAreaFilled(false);
         aboutUsButton.setOpaque(false);
         aboutUsButton.setContentAreaFilled(false);
+        exportError.setOpaque(false);
+        exportError.setContentAreaFilled(false);
+        exportTokens.setOpaque(false);
+        exportTokens.setContentAreaFilled(false);
+        cleanButton.setOpaque(false);
+        cleanButton.setContentAreaFilled(false);
 
         codeArea.getDocument().addUndoableEditListener(new UndoableEditListener() {
             @Override

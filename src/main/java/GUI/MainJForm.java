@@ -28,7 +28,7 @@ public class MainJForm extends javax.swing.JFrame {
         dataManager.dataManager(openFileButton, textWriterArea);
         dataManager.Export(exportError, errorLogArea);
         dataManager.Export(exportTokens, tokenLogArea);
-        buttonManagers.initializeTextAreaButtons(textWriterArea, undoButton, redoButton, copyTextButton, pasteTextButton, openFileButton, saveFileButton, saveFileAsButton, newFileButton, compileButton, aboutButton);
+        buttonManagers.initializeTextAreaButtons(textWriterArea, undoButton, redoButton, copyTextButton, pasteTextButton, openFileButton, saveFileButton, saveFileAsButton, newFileButton, compileButton, aboutButton, exportError, exportTokens, cleanButton);
         dataManager.Export(saveFileAsButton, textWriterArea);
         analyzerManager.clearArea(cleanButton, textWriterArea, tokenLogArea, errorLogArea);
         analyzerManager.clearArea(newFileButton, textWriterArea, tokenLogArea, errorLogArea);
@@ -84,7 +84,7 @@ public class MainJForm extends javax.swing.JFrame {
         tokenLogArea.setRows(5);
         jScrollPane1.setViewportView(tokenLogArea);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 120, 324, 680));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 120, 330, 680));
 
         textWriterArea.setBackground(new java.awt.Color(102, 102, 102));
         textWriterArea.setColumns(20);
@@ -95,14 +95,16 @@ public class MainJForm extends javax.swing.JFrame {
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 113, 951, 561));
 
         cleanButton.setForeground(new java.awt.Color(255, 255, 255));
-        cleanButton.setText("Limpiar");
+        cleanButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/cleanTextImage.png"))); // NOI18N
+        cleanButton.setText("Clean");
         cleanButton.setBorder(null);
+        cleanButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         cleanButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cleanButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(cleanButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 870, 103, -1));
+        jPanel1.add(cleanButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 810, 90, 80));
 
         errorLogArea.setBackground(new java.awt.Color(102, 102, 102));
         errorLogArea.setColumns(20);
@@ -113,24 +115,28 @@ public class MainJForm extends javax.swing.JFrame {
         jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 790, 1010, 190));
 
         exportTokens.setForeground(new java.awt.Color(255, 255, 255));
-        exportTokens.setText("Exportar Tokens");
+        exportTokens.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/saveTokensLogs.png"))); // NOI18N
+        exportTokens.setText("Export Tokens");
         exportTokens.setBorder(null);
+        exportTokens.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         exportTokens.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exportTokensActionPerformed(evt);
             }
         });
-        jPanel1.add(exportTokens, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 820, -1, -1));
+        jPanel1.add(exportTokens, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 810, 90, 80));
 
         exportError.setForeground(new java.awt.Color(255, 255, 255));
-        exportError.setText("Exportar Errores");
+        exportError.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IDEImages/saveErrorLogs.png"))); // NOI18N
+        exportError.setText("Export  Errors");
         exportError.setBorder(null);
+        exportError.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         exportError.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exportErrorActionPerformed(evt);
             }
         });
-        jPanel1.add(exportError, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 820, -1, -1));
+        jPanel1.add(exportError, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 810, 90, 80));
 
         errorLabel.setForeground(new java.awt.Color(255, 255, 255));
         errorLabel.setText("Token Log");
